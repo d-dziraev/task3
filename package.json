@@ -1,0 +1,14 @@
+{
+    "name": "task_3",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "node app.js rock paper scissors lizard spoke"
+    },
+    "dependencies": {
+        "csprng": "^0.1.2",
+        "random-number-csprng": "^1.0.2",
+        "readline-sync": "^1.4.10",
+        "secure-random": "^1.1.2"
+    }
+}
