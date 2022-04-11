@@ -7,20 +7,20 @@ class Table {
         this.table = moves.reduce((columns, yourMove, i, a) => {
             columns[yourMove] = a.reduce((rows, compMove) => {
                 let centre = this.toCenter(a.slice(), yourMove);
-                let indexCompMove = centre.indexOf(compMove)
+                let indexCompMove = centre.indexOf(compMove);
                 rows[compMove] = yourMove == compMove ? 'draw' : indexCompMove < Math.floor(a.length / 2) ? 'lose' : 'win';
 
                 return rows;
             }, {});
             return columns;
         }, {});
-        this.table["user"] = "computer"
+
     }
     toCenter(elements, element) {
         while(elements.indexOf(element) != Math.floor(elements.length / 2)) {
-            elements.unshift(elements.pop())
+            elements.unshift(elements.pop());
         }
-        return elements
+        return elements;
     }
     Result(yourMove, compMove) {
 
@@ -28,5 +28,5 @@ class Table {
     }
 }
 
-module.exports = Table
+module.exports = Table;
 

@@ -1,5 +1,5 @@
 const readline = require('readline-sync');
-const hmac = require('./hmac')
+const hmac = require('./hmac');
 const crypto = require('crypto');
 const table = require('./table');  
 
@@ -18,17 +18,17 @@ class Game {
     }
     getcompMove() {
         let i = Math.floor(Math.random()*this.moves.length);
-        this.compMove = this.moves[i]
+        this.compMove = this.moves[i];
     }
 
     getKey() {
         const curv = crypto.randomBytes(32);
-        this.key = curv.toString('hex')
+        this.key = curv.toString('hex');
     }
 
 }
 
-const judge = new table()
+const judge = new table();
 const game = new Game();
 const HMAC = new hmac();
 
@@ -60,7 +60,7 @@ function Interface() {
                 Interface();
                 break;
             default:
-                judge.Result(game.moves[a - 1], game.compMove)
+                judge.Result(game.moves[a - 1], game.compMove);
                 console.log('Your move: ' + game.moves[a - 1], '\nComputer move: ' + game.compMove,
                 '\nResult: ' + judge.result, '\nHMAC key: ' + game.key );             
         }
